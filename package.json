@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@antv/l7": "^2.2.37",
+    "@antv/l7-maps": "^2.2.37",
+    "@antv/l7-react": "^2.2.39",
     "@holism/core": "^3.0.7",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
