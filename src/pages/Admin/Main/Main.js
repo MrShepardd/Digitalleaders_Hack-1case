@@ -3,6 +3,7 @@ import Tabs from "../../../components/Tabs";
 import Map from "../Map";
 import Hero from "../Hero";
 import Footer from "../Footer";
+import PeopleFlowMap from "../PeopleFlowMap";
 
 const Main = () => {
   let data = {
@@ -19,6 +20,8 @@ const Main = () => {
             <Tabs></Tabs>
 
             <Map></Map>
+
+            <PeopleFlowMap/>
         </div>
 
         <Footer></Footer>
