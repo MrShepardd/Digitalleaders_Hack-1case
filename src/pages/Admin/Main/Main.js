@@ -13,13 +13,16 @@ const Main = () => {
 
   return (
     <div className="content">
-      <Hero data={data}></Hero>
+        <Hero data={data}></Hero>
 
-      <Tabs></Tabs>
+        <div className="section">
+            <Tabs></Tabs>
 
-      <Map></Map>
+            <Map></Map>
+        </div>
 
-      <Footer></Footer>
+        <Footer></Footer>
+
     </div>
   );
 };
