@@ -1,18 +1,18 @@
 import React from "react";
-import { H2, Text, GridCol, Grid } from "@holism/core";
+import { H1, Text, GridCol, Grid } from "@holism/core";
 
 const Footer = () => {
   return (
-    <div className="content">
-      <H2>Исходные данные</H2>
+    <div className="footer">
+      <H1 className="title">Исходные данные</H1>
       <Grid>
         <GridCol>
-          <Text>Google Places</Text>
-          <Text>OpenStreetMaps</Text>
+          <Text className="description">Google Places</Text>
+          <Text className="description">OpenStreetMaps</Text>
         </GridCol>
         <GridCol>
-          <Text>Yandex Maps</Text>
-          <Text>Statdata.ru</Text>
+          <Text className="description">Yandex Maps</Text>
+          <Text className="description">Statdata.ru</Text>
         </GridCol>
       </Grid>
     </div>

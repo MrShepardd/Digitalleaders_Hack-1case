@@ -21,10 +21,45 @@
     font-weight: normal;
     font-size: 28px;
     line-height: 40px;
-    padding-top: 5rem;
+    //padding-top: 5rem;
+    margin-top: 10rem;
+    border: 2px solid #fff;
     color: #f7f9fb;
     
   }
+}
+
+.section {
+  margin-top: 3rem;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.footer {
+  margin-top: 8rem;
+  background: #262C40;
+  padding: 3rem;
+
+  .title {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 100 !important;
+  }
+
+  .description {
+    color: #e6dbdb;
+    padding-top: .3rem;
+  }
+
+}
+
+
+
+
+
+.logo-wrapper {
+  margin-left: 20rem;
+  margin-top: -2rem;
 }
 
 .jumbotron {

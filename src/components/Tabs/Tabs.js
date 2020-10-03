@@ -14,18 +14,20 @@ const IItem = [
 const Tabs = () => {
   const [list, setList] = useState(IItem);
   return (
-    <HolismTabs
-      list={list}
-      onChange={({ id, isActive, label }) => {
-        setList(
-          list.map((item) =>
-            item.id === id
-              ? { id, isActive: true, label }
-              : { ...item, isActive: false }
-          )
-        );
-      }}
-    />
+      <div className="my-3 p-2 pb-3 pl-5 border">
+          <HolismTabs
+              list={list}
+              onChange={({ id, isActive, label }) => {
+                  setList(
+                      list.map((item) =>
+                          item.id === id
+                              ? { id, isActive: true, label }
+                              : { ...item, isActive: false }
+                      )
+                  );
+              }}
+          />
+      </div>
   );
 };
 
