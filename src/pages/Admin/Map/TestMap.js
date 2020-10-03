@@ -1,6 +1,5 @@
-import { MapboxScene, LoadImage, LineLayer } from "@antv/l7-react";
+import { MapboxScene, LineLayer } from "@antv/l7-react";
 import * as React from "react";
-import ReactDOM from "react-dom";
 
 const World = React.memo(function Map() {
   const pathData = [

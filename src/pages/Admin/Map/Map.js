@@ -11440,7 +11440,6 @@ const pathData = [
   },
 ];
 
-
 const getLayerOptions = (data, icons) => {
   return {
     key: "2",
@@ -11468,11 +11467,9 @@ const getLayerOptions = (data, icons) => {
 };
 
 const amtLayer = getLayerOptions(pointData, ["00"]);
-
 const placesLayer = getLayerOptions(placesData, ["01"]);
 
 const Map = () => {
-  console.log(pathData);
   return (
     <div className="content">
       <MapboxScene
@@ -11555,18 +11552,7 @@ const Map = () => {
             }}
             color={{
               field: "distance",
-              values: [
-                "#0A3663",
-                "#1558AC",
-                "#3771D9",
-                "#4D89E5",
-                "#64A5D3",
-                "#72BED6",
-                "#83CED6",
-                "#A6E1E0",
-                "#B8EFE2",
-                "#D7F9F0",
-              ].reverse(),
+              values: ["#0A3663"],
             }}
           />,
         ]}
