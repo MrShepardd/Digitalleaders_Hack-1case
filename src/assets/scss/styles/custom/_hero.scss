@@ -1,0 +1,26 @@
+.is-hero {
+  padding: 5rem 10rem 5rem 10rem;
+  width: 100%;
+  height: 30rem;
+  background: #23415f;
+
+  .is-hero-title {
+    position: absolute;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 72px;
+
+    color: #f7f9fb;
+  }
+
+  .is-hero-text {
+    position: absolute;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 58px;
+    padding-top: 5rem;
+    color: #f7f9fb;
+  }
+}

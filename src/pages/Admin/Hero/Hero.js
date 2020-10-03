@@ -4,16 +4,18 @@ import logoGPB from "../../../assets/img/logoGPB.svg";
 
 const Hero = ({ data }) => {
   return (
-    <div className="content">
-      <Grid gapless={true}>
+    <div className="content is-hero">
+      <Grid>
         <GridCol offset={33} column={33}>
-          <img src={logoGPB} alt="ГазПромБанк logo" />
-        </GridCol>
-        <GridCol column={33}>
-          <H1>{data.heroTitle}</H1>
+          <span>
+            <img src={logoGPB} alt="ГазПромБанк logo" />
+            <H1 className="is-hero-title">
+              {data.heroTitle}
+            </H1>
+          </span>
         </GridCol>
         <GridCol offset={25} column={50}>
-          <H1>{data.heroHeader}</H1>
+          <H1 className="is-hero-text">{data.heroHeader}</H1>
         </GridCol>
       </Grid>
     </div>
