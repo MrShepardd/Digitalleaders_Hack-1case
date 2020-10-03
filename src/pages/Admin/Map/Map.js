@@ -7,6 +7,15 @@ import {
   LoadImage,
 } from "@antv/l7-react";
 
+const colors = [
+  "rgba(0, 81, 207, 2.30)",
+  "rgba(0, 81, 207, 1.95)",
+  "rgba(0, 81, 207, 1.85)",
+  "rgba(0, 81, 207, 1.4)",
+  "rgba(0, 81, 207, 1.2)",
+  "rgba(0, 81, 207, 1.0)",
+];
+
 const POLIGON_GEOM = [
   {
     type: "Feature",
@@ -11502,16 +11511,16 @@ const Map = () => {
               field: "density",
               values: (d) => {
                 return d > 155000
-                  ? "rgba(0, 81, 207, 2.30)"
+                  ? colors[0]
                   : d > 150000
-                  ? "rgba(0, 81, 207, 1.95)"
+                  ? colors[1]
                   : d > 140000
-                  ? "rgba(0, 81, 207, 1.85)"
+                  ? colors[2]
                   : d > 90000
-                  ? "rgba(0, 81, 207, 1.4)"
+                  ? colors[3]
                   : d > 50000
-                  ? "rgba(0, 81, 207, 1.2)"
-                  : "rgba(0, 81, 207, 1.0)";
+                  ? colors[4]
+                  : colors[5];
               },
             }}
             shape={{
