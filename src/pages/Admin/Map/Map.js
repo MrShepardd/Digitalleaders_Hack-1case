@@ -11570,7 +11570,6 @@ const Map = () => {
             }}
           />,
         ]}
-
         <LoadImage
           name="01"
           url="https://img.icons8.com/color/48/000000/bus2.png"

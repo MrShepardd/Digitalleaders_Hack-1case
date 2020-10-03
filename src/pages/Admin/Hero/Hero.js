@@ -6,13 +6,14 @@ const Hero = ({ data }) => {
   return (
     <div className="content is-hero">
       <Grid>
-        <GridCol offset={33} column={33}>
-          <span>
-            <img src={logoGPB} alt="ГазПромБанк logo" />
-            <H1 className="is-hero-title">
-              {data.heroTitle}
-            </H1>
-          </span>
+        <GridCol offset={25} column={50}>
+        
+          <img
+            className="display-inline-block"
+            src={logoGPB}
+            alt="ГазПромБанк logo"
+          />
+          <H1 className="is-hero-title">{data.heroTitle}</H1>
         </GridCol>
         <GridCol offset={25} column={50}>
           <H1 className="is-hero-text">{data.heroHeader}</H1>
