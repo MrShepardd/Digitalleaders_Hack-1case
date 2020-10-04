@@ -4,6 +4,7 @@ import Map from "../Map";
 import Hero from "../Hero";
 import Footer from "../Footer";
 import PeopleFlowMap from "../PeopleFlowMap";
+import RadiusMap from "../RadiusMap";
 
 const Main = () => {
   let data = {
@@ -20,6 +21,8 @@ const Main = () => {
             <Tabs></Tabs>
 
             <Map></Map>
+
+            <RadiusMap/>
 
             <PeopleFlowMap/>
         </div>
