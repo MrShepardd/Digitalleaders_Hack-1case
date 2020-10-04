@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useState } from "react";
 import Tabs from "../../../components/Tabs";
 import Map from "../Map";
 import Hero from "../Hero";
@@ -13,24 +13,41 @@ const Main = () => {
       "Геоинформационная система для отслеживания избытка или недостаточности банкоматов Банка в городах присутствия",
   };
 
+    const [activeTab, setActiveTab] = useState("currentATM");
+
+    const updateActiveTab = (value) => {
+        setActiveTab(value);
+    };
+
+    const tabList = {
+        currentATM: <Map/>,
+        radiusATM: <RadiusMap/>,
+        humanflowATM: <PeopleFlowMap/>
+    };
+
+    const current_tab = get_current_tab(tabList, activeTab);
+
   return (
     <div className="content">
         <Hero data={data}></Hero>
 
         <div className="section">
-            <Tabs></Tabs>
+            <Tabs
+                updateActiveTab={updateActiveTab}
+            />
 
-            <Map></Map>
+            {current_tab}
 
-            <RadiusMap/>
-
-            <PeopleFlowMap/>
         </div>
 
         <Footer></Footer>
 
     </div>
   );
+};
+
+const get_current_tab = (tabList, tab) => {
+    return !tab ? tabList[0] : tabList[tab];
 };
 
 export default Main;
