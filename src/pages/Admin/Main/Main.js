@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import Tabs from "../../../components/Tabs";
-import Map from "../Map";
+import RadiusMap from "../RadiusMap";
 import Hero from "../Hero";
 import Footer from "../Footer";
 
@@ -18,7 +18,7 @@ const Main = () => {
         <div className="section">
             <Tabs></Tabs>
 
-            <Map></Map>
+            <RadiusMap></RadiusMap>
         </div>
 
         <Footer></Footer>

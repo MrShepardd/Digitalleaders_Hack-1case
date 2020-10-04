@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import { H1, Button } from "@holism/core";
+import { H1 } from "@holism/core";
 import logoGPB from "../../../assets/img/icon-gpb-white.svg";
 
 const Hero = ({ data }) => {
@@ -14,9 +14,9 @@ const Hero = ({ data }) => {
         for (let i = 0; i < sources.length; i++) {
             let sourceFile = sources[i].getAttribute("data-src");
             sources[i].setAttribute("src", sourceFile);
-            let video = sources[i].parentElement;
-            video.load();
-            video.play();
+            // let video = sources[i].parentElement;
+            // video.load();
+            // video.play();
         }
 
     }, [ref]);
