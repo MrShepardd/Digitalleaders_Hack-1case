@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   LineLayer,
   PolygonLayer,
   MapboxScene,
   PointLayer,
   LoadImage,
+  Popup,
+  LayerEvent,
 } from "@antv/l7-react";
+
+import gpb from "../../../assets/img/bank icons/gpb.svg";
+import alpha from "../../../assets/img/bank icons/alpha.svg";
+import vtb from "../../../assets/img/bank icons/vtb.svg";
 
 const colors = [
   "rgba(0, 81, 207, 2.30)",
@@ -11475,10 +11481,19 @@ const getLayerOptions = (data, icons) => {
   };
 };
 
-const amtLayer = getLayerOptions(pointData, ["00"]);
+const amtLayer = getLayerOptions(pointData, ["ГазПромБанк", "АльфаБанк", "ВТБ"]);
 const placesLayer = getLayerOptions(placesData, ["01"]);
 
 const Map = () => {
+  const [popupInfo, setPopupInfo] = useState();
+
+  function showPopup(args) {
+    setPopupInfo({
+      lnglat: args.lngLat,
+      feature: args.feature,
+    });
+  }
+
   return (
     <div className="content">
       <MapboxScene
@@ -11495,6 +11510,35 @@ const Map = () => {
           position: "relative",
         }}
       >
+        {popupInfo && (
+          <Popup
+            lnglat={popupInfo.lnglat}
+            className="theme-dark"
+            style={{
+              padding: "0 0 0px 15px",
+      
+            }}
+          >
+            <h6 className="card-title">
+              {popupInfo.feature.properties
+                ? popupInfo.feature.properties.name
+                : popupInfo.feature.name}
+            </h6>
+            <ul
+              style={{
+                margin: "5px 0 0 0",
+                listStyle: "none",
+              }}
+            >
+              <li className="description">
+                {popupInfo.feature.properties
+                  ? "Количество жителей: " +
+                    popupInfo.feature.properties.density
+                  : "Рейтинг: " + popupInfo.feature.rating}
+              </li>
+            </ul>
+          </Popup>
+        )}
         {data && [
           <PolygonLayer
             key={"2"}
@@ -11537,7 +11581,9 @@ const Map = () => {
                 color: "#696969",
               },
             }}
-          />,
+          >
+            <LayerEvent type="mousemove" handler={showPopup} />
+          </PolygonLayer>,
           <LineLayer
             key={"21"}
             source={{
@@ -11567,13 +11613,25 @@ const Map = () => {
         ]}
         <LoadImage
           name="01"
-          url="https://img.icons8.com/color/48/000000/bus2.png"
+          url={"https://img.icons8.com/color/48/000000/bus2.png"}
         />
         <LoadImage
-          name="00"
-          url="https://img.icons8.com/office/80/000000/atm.png"
+          name="ГазПромБанк"
+          url={gpb}
         />
-        {pointData && <PointLayer {...amtLayer}></PointLayer>}
+        <LoadImage
+          name="АльфаБанк"
+          url={alpha}
+        />
+        <LoadImage
+          name="ВТБ"
+          url={vtb}
+        />
+        {pointData && (
+          <PointLayer {...amtLayer}>
+            <LayerEvent type="mousemove" handler={showPopup} />
+          </PointLayer>
+        )}
         {pointData && <PointLayer {...placesLayer}></PointLayer>}
       </MapboxScene>
     </div>

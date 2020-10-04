@@ -311,7 +311,7 @@ const PeopleFlowMap = () => {
 
             <InputRange
                 value={rangeValue}
-                onChange={(e, value: string) => {
+                onChange={(e, value) => {
                     if (value && value > '4') {
                         setPostfix('часов');
                     }
