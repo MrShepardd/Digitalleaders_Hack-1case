@@ -12,6 +12,24 @@ const tabList = {
     humanflowATM: <PeopleFlowMap/>
 };
 
+const tabItems = [
+    {
+        id: "currentATM",
+        label: "Текущее расположение банкоматов",
+        isActive: true,
+    },
+    {
+        id: "radiusATM",
+        label: "Радиус банкоматов",
+        isActive: false
+    },
+    {
+        id: "humanflowATM",
+        label: "С передвижением людей",
+        isActive: false
+    },
+];
+
 const MapTabs = () => {
     const [activeTab, setActiveTab] = useState("currentATM");
 
@@ -24,6 +42,7 @@ const MapTabs = () => {
     return (
         <div className="section">
             <Tabs
+                items={tabItems}
                 updateActiveTab={updateActiveTab}
             />
             {current_tab}
