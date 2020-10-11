@@ -12,7 +12,7 @@ const get_crowded_places = require('./get_crowded_places').default;
 
 const get_path_crowded_places = require('./get_path_crowded_places').default;
 
-module.exports = {
+const dashboardData = {
     get_cluster_polygons,
     get_atm_location,
     get_people_flow,
@@ -20,4 +20,8 @@ module.exports = {
     get_all_atm_location,
     get_crowded_places,
     get_path_crowded_places
+};
+
+module.exports = {
+    dashboardData
 };

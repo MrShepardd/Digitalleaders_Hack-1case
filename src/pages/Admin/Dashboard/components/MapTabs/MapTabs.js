@@ -6,12 +6,6 @@ import {
     RadiusMap
 } from "../index";
 
-const tabList = {
-    currentATM: <CurrentAtmMap/>,
-    radiusATM: <RadiusMap/>,
-    humanflowATM: <PeopleFlowMap/>
-};
-
 const tabItems = [
     {
         id: "currentATM",
@@ -30,8 +24,20 @@ const tabItems = [
     },
 ];
 
-const MapTabs = () => {
+const MapTabs = ({data}) => {
     const [activeTab, setActiveTab] = useState("currentATM");
+
+    const tabList = {
+        currentATM: <CurrentAtmMap
+            data={data}
+        />,
+        radiusATM: <RadiusMap
+            data={data}
+        />,
+        humanflowATM: <PeopleFlowMap
+            data={data}
+        />
+    };
 
     const current_tab = get_current_tab(tabList, activeTab);
 

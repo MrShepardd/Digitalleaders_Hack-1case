@@ -1,5 +1,8 @@
+const backPort = 5000;
+const backPath = window.location.protocol + '//' + window.location.hostname + ":" + backPort;
+
 export default async function callApi(endpoint, token, options, payload) {
-    const sitePath = 'http://localhost';
+    const sitePath = backPath;
 
     const authHeaders = token ? {
         'Authorization': `Bearer ${token}`

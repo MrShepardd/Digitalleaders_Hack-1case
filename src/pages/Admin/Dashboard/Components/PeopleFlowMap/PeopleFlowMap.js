@@ -9,24 +9,24 @@ import {
     PointLayer
 } from "@antv/l7-react";
 
-import {
-    get_cluster_polygons,
-    get_atm_location,
-    get_people_flow
-} from '../../../../../constants/components_data'
-
 const get_time_key = (value) => {
     value = value === '24' ? 0 : value;
     const prefix = value < 10 ? '0' : '';
     return `${prefix}${value}:00:00`
 };
 
-const PeopleFlowMap = () => {
+const PeopleFlowMap = ({data}) => {
+
+    const {
+        get_cluster_polygons,
+        get_atm_location,
+        get_people_flow
+    } = data;
 
     const [postfix, setPostfix] = useState('час');
     const [rangeValue, setRangeValue] = useState('1');
 
-    const data = {
+    const flowData = {
         type: "FeatureCollection",
         features: get_time_key(rangeValue) in get_people_flow ? get_people_flow[get_time_key(rangeValue)] : [],
     };
@@ -54,7 +54,7 @@ const PeopleFlowMap = () => {
     const polygonLayer = {
         key: "2",
         source:{
-            data,
+            data: flowData,
         },
         options: {
             autoFit: true,
@@ -179,7 +179,7 @@ const PeopleFlowMap = () => {
                     <PointLayer {...amtLayer} />
                 }
 
-                {data && [
+                {flowData && [
                     <PolygonLayer {...polygonLayer}/>
                 ]}
 

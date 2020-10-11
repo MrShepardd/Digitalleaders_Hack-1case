@@ -3,17 +3,17 @@ import Popup from './Popup'
 import DistrictLayer from './DistrictLayer'
 import AtmLayer from './AtmLayer'
 import CrowdedPlaceLayer from './CrowdedPlaceLayer'
-import {MapboxScene,} from "@antv/l7-react";
+import {MapboxScene} from "@antv/l7-react";
 
-import {
-  get_district_location,
-  get_all_atm_location,
-  get_crowded_places,
-  get_path_crowded_places
-} from '../../../../../constants/components_data'
-
-const CurrentAtmMap = () => {
+const CurrentAtmMap = ({data}) => {
   const [popupInfo, setPopupInfo] = useState();
+
+  const {
+    get_district_location,
+    get_all_atm_location,
+    get_crowded_places,
+    get_path_crowded_places
+  } = data;
 
   function showPopup(args) {
     setPopupInfo({

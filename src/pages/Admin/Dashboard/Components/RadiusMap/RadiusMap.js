@@ -1,6 +1,5 @@
 import React from "react";
 import { MapboxScene, PointLayer } from "@antv/l7-react";
-import {get_atm_location} from '../../../../../constants/components_data'
 
 const data_r1 = {
   type: "FeatureCollection",
@@ -14,31 +13,33 @@ const data_r2 = {
   features: [],
 };
 
-Array.isArray(get_atm_location) && get_atm_location.forEach((p) => {
-  data_r1["features"].push({
-    type: "Feature",
-    properties: {
-      id: p.id,
-      name: p.name,
-      mag: 5.0,
-      felt: null,
-    },
-    geometry: { type: "Point", coordinates: [p.longitude, p.latitude, 0.0] },
-  });
+const RadiusMap = ({data}) => {
 
-  data_r2["features"].push({
-    type: "Feature",
-    properties: {
-      id: p.id,
-      name: p.name,
-      mag: 7.0,
-      felt: null,
-    },
-    geometry: { type: "Point", coordinates: [p.longitude, p.latitude, 0.0] },
-  });
-});
+  const {get_atm_location} = data;
 
-const RadiusMap = () => {
+  Array.isArray(get_atm_location) && get_atm_location.forEach((p) => {
+    data_r1["features"].push({
+      type: "Feature",
+      properties: {
+        id: p.id,
+        name: p.name,
+        mag: 5.0,
+        felt: null,
+      },
+      geometry: { type: "Point", coordinates: [p.longitude, p.latitude, 0.0] },
+    });
+
+    data_r2["features"].push({
+      type: "Feature",
+      properties: {
+        id: p.id,
+        name: p.name,
+        mag: 7.0,
+        felt: null,
+      },
+      geometry: { type: "Point", coordinates: [p.longitude, p.latitude, 0.0] },
+    });
+  });
 
   const mapBoxLayer = {
     map: {
