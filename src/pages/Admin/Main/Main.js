@@ -1,6 +1,6 @@
 ﻿import React, { useState } from "react";
 import Tabs from "../../../components/Tabs";
-import Map from "../Map";
+import CurrentAtmMap from "../CurrentAtmMap";
 import Hero from "../Hero";
 import Footer from "../Footer";
 import PeopleFlowMap from "../PeopleFlowMap";
@@ -20,7 +20,7 @@ const Main = () => {
     };
 
     const tabList = {
-        currentATM: <Map/>,
+        currentATM: <CurrentAtmMap/>,
         radiusATM: <RadiusMap/>,
         humanflowATM: <PeopleFlowMap/>
     };
