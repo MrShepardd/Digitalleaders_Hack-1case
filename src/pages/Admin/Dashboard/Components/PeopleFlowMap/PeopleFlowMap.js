@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { InputRange } from '@holism/core';
-import gpb from "../../../assets/img/bank icons/gpb.svg";
+import gpb from "../../../../../assets/img/bank icons/gpb.svg";
 
 import {
     PolygonLayer,
@@ -13,7 +13,7 @@ import {
     get_cluster_polygons,
     get_atm_location,
     get_people_flow
-} from '../../../constants/components_data'
+} from '../../../../../constants/components_data'
 
 const get_time_key = (value) => {
     value = value === '24' ? 0 : value;

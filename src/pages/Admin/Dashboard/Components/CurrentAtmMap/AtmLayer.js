@@ -4,9 +4,9 @@ import {
     PointLayer,
     LayerEvent,
 } from "@antv/l7-react";
-import gpb from "../../../assets/img/bank icons/gpb.svg";
-import alpha from "../../../assets/img/bank icons/alpha.svg";
-import vtb from "../../../assets/img/bank icons/vtb.svg";
+import gpb from "../../../../../assets/img/bank icons/gpb.svg";
+import alpha from "../../../../../assets/img/bank icons/alpha.svg";
+import vtb from "../../../../../assets/img/bank icons/vtb.svg";
 
 const AtmLayer = ({data, showPopup}) => {
 

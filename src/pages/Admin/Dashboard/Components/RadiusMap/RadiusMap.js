@@ -1,6 +1,6 @@
 import React from "react";
 import { MapboxScene, PointLayer } from "@antv/l7-react";
-import {get_atm_location} from '../../../constants/components_data'
+import {get_atm_location} from '../../../../../constants/components_data'
 
 const data_r1 = {
   type: "FeatureCollection",

@@ -1,5 +1,5 @@
 ﻿import {
-    Main as MainPage
+    Dashboard as DashboardPage
 } from '../pages/Admin';
 
 let routes = [
@@ -8,7 +8,7 @@ let routes = [
         name: "Главная",
         title: "Главная",
         icon: "home-active-icon",
-        component: MainPage,
+        component: DashboardPage,
         layout: "/admin",
         show: true
     }

@@ -10,7 +10,7 @@ import {
   get_all_atm_location,
   get_crowded_places,
   get_path_crowded_places
-} from '../../../constants/components_data'
+} from '../../../../../constants/components_data'
 
 const CurrentAtmMap = () => {
   const [popupInfo, setPopupInfo] = useState();

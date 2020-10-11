@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import { H1 } from "@holism/core";
-import logoGPB from "../../../assets/img/icon-gpb-white.svg";
+import logoGPB from "../../../../../assets/img/icon-gpb-white.svg";
 
 const Hero = ({ data }) => {
 
