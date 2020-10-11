@@ -8,7 +8,33 @@ import gpb from "../../../../../assets/img/bank icons/gpb.svg";
 import alpha from "../../../../../assets/img/bank icons/alpha.svg";
 import vtb from "../../../../../assets/img/bank icons/vtb.svg";
 
+const icon_list = [
+    {
+        name: 'газпромбанк',
+        url: gpb
+    },
+    {
+        name: 'альфабанк',
+        url: alpha
+    },
+    {
+        name: 'втб',
+        url: vtb
+    },
+];
+
+const renderIcons = () => (
+    icon_list.map(icon =>
+        <LoadImage
+            name={icon.name}
+            url={icon.url}
+        />
+    )
+);
+
 const AtmLayer = ({data, showPopup}) => {
+
+    const icons = renderIcons();
 
     const atmLayer = {
         key: 0,
@@ -37,18 +63,7 @@ const AtmLayer = ({data, showPopup}) => {
 
     return (
         <>
-            <LoadImage
-                name="газпромбанк"
-                url={gpb}
-            />
-            <LoadImage
-                name="альфабанк"
-                url={alpha}
-            />
-            <LoadImage
-                name="втб"
-                url={vtb}
-            />
+            {icons}
 
             {data && (
                 <PointLayer {...atmLayer}>
