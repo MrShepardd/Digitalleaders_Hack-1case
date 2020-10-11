@@ -24,8 +24,9 @@ const icon_list = [
 ];
 
 const renderIcons = () => (
-    icon_list.map(icon =>
+    icon_list.map((icon, index) =>
         <LoadImage
+            key={index}
             name={icon.name}
             url={icon.url}
         />
