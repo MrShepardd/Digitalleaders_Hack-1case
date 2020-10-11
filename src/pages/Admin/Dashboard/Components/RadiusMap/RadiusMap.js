@@ -127,7 +127,7 @@ const RadiusMap = ({data}) => {
   };
 
   return (
-    <div className="content">
+    <div className="content map">
       <MapboxScene {...mapBoxLayer}>
         {data_r1 && (
           <PointLayer {...innerRadiusLayer} />

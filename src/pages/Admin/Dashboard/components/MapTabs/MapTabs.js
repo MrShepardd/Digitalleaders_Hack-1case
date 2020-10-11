@@ -28,15 +28,9 @@ const MapTabs = ({data}) => {
     const [activeTab, setActiveTab] = useState("currentATM");
 
     const tabList = {
-        currentATM: <CurrentAtmMap
-            data={data}
-        />,
-        radiusATM: <RadiusMap
-            data={data}
-        />,
-        humanflowATM: <PeopleFlowMap
-            data={data}
-        />
+        currentATM: <CurrentAtmMap data={data} />,
+        radiusATM: <RadiusMap data={data} />,
+        humanflowATM: <PeopleFlowMap data={data} />
     };
 
     const current_tab = get_current_tab(tabList, activeTab);

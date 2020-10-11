@@ -38,7 +38,7 @@ const CurrentAtmMap = ({data}) => {
   };
 
   return (
-    <div className="content">
+    <div className="content map">
       <MapboxScene {...mapBoxLayer}>
 
         <Popup popupInfo={popupInfo}/>

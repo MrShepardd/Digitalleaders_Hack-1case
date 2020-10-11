@@ -168,7 +168,7 @@ const PeopleFlowMap = ({data}) => {
     const ranges = [...Array(22)].map((e, i) => {return {value: i + 2}})
 
     return (
-        <div className="content">
+        <div className="content map">
             <MapboxScene {...mapBoxLayer}>
                 <LoadImage
                     name="газпромбанк"
